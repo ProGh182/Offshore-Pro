@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drone Offshore Pro — Captation en haute mer</title>
+  <meta name="description" content="Le 1er drone entièrement dédié aux courses au large. Résistance au vent, suivi prédictif, transmission satellite, landing sur plateforme flottante." />
+  <style>
+    /* Reset & base */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#00b4d8; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --maxw:1100px; --gap:18px;
+      --accent-2:#00f5a0;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#021124 0%, #071823 70%); color:#e6eef6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    a{color:var(--accent); text-decoration:none}
+    img{max-width:100%;height:auto}
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{backdrop-filter:blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px 0;position:sticky;top:0;z-index:30}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#042;box-shadow:0 6px 20px rgba(0,180,216,0.12)}
+    .brand h1{margin:0;font-size:16px}
+    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+    nav button, nav a{background:transparent;border:0;color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer}
+    nav button:hover, nav a:hover{color:#fff;background:var(--glass)}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042;padding:8px 12px;border-radius:10px;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .hero-left h2{font-size:32px;margin:0 0 12px}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .badges{display:flex;gap:10px;margin-bottom:18px}
+    .badge{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+    .hero-cta{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--accent);color:#042}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:16px;box-shadow:0 8px 30px rgba(2,17,36,0.6)}
+    .specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+    .specs div{font-size:14px;color:var(--muted)}
+
+    /* Sections */
+    section{padding:36px 0}
+    h3{margin:0 0 12px}
+
+    /* Products grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap)}
+    .product{padding:16px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .product h4{margin:8px 0}
+    .price{font-weight:800;font-size:18px}
+    .p-attrs{color:var(--muted);font-size:14px;margin:8px 0}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,0.03);padding:28px 0;margin-top:28px;color:var(--muted)}
+
+    /* Checkout */
+    .checkout{display:grid;grid-template-columns:1fr 380px;gap:20px}
+    .line{display:flex;justify-content:space-between;gap:8px}
+
+    /* Small screens */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .checkout{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+
+    /* Tiny util */
+    .muted{color:var(--muted)}
+    .micro{font-size:13px}
+    .pill{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px}
+    /* Cart badge */
+    .cart-badge{background:var(--accent-2);color:#042;padding:6px 8px;border-radius:999px;font-weight:700}
+
+    /* success */
+    .success{background:linear-gradient(90deg,#052 50%, #012);padding:16px;border-radius:12px;margin-top:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">O</div>
+        <div>
+          <h1>Drone Offshore Pro</h1>
+          <div class="micro muted">Le 1er drone dédié aux courses au large</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home" data-nav>Accueil</a></li>
+          <li><a href="#products" data-nav>Produits</a></li>
+          <li><a href="#checkout" data-nav>Commande</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="micro muted">Contact: <a href="mailto:contact@offshorepro.example">contact@offshorepro.example</a></div>
+        <button class="cta" id="open-products">Acheter</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HOME -->
+    <section id="home">
+      <div class="hero">
+        <div class="hero-left">
+          <div class="badges">
+            <span class="badge">Résistant au vent 50 nœuds</span>
+            <span class="badge">Suivi prédictif</span>
+            <span class="badge">Transmission satellite</span>
+          </div>
+          <h2>Le 1er drone "entièrement dédié aux courses au large</h2>
+          <p class="lead">Spécialisé là où DJI, Skydio et Parrot ne peuvent pas aller. Stabilisation 4K/8K, landing sur plateforme flottante et diffusion live via satellite.</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" id="cta-buy">Voir les produits</button>
+            <a href="about.html" class="btn btn-ghost">En savoir plus</a>
+          </div>
+
+          <section style="margin-top:22px">
+            <h3>Pourquoi Offshore Pro ?</h3>
+            <p class="muted">Les drones grand public ne supportent pas le sel, le vent fort ni la diffusion professionnelle en pleine mer. Offshore Pro a été conçu pour ces défis: étanchéité marine totale, IA bateau spécialisée et plateforme de landing automatisée.</p>
+          </section>
+        </div>
+
+        <aside class="card">
+          <h4>Fiche rapide</h4>
+          <div class="specs">
+            <div>Vent max: <strong>50 nœuds</strong></div>
+            <div>Caméra: <strong>4K/8K stabilisée</strong></div>
+            <div>Transmission: <strong>Satellite + 4G/5G</strong></div>
+            <div>Landing: <strong>Plateforme flottante</strong></div>
+          </div>
+          <div style="margin-top:14px">
+            <div class="micro muted">Prototype budget</div>
+            <div style="font-weight:800">~53 000 €</div>
+          </div>
+        </aside>
+      </div>
+
+      <div style="margin-top:28px">
+        <h3>Persona — Thomas Le Goff</h3>
+        <p class="muted">Responsable médias (38 ans) : besoin d'images spectaculaires, fiabilité en mer, autonomie suffisante et sécurité.</p>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" style="display:none">
+      <h3>Produits</h3>
+      <p class="muted">Choisissez votre configuration. Vous pouvez ajouter plusieurs options puis passer commande depuis la page Commande.</p>
+      <div class="grid" id="products-grid">
+        <!-- Products injected by JS -->
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section id="checkout" style="display:none">
+      <h3>Commande</h3>
+      <div class="checkout card">
+        <div>
+          <h4>Panier</h4>
+          <div id="cart-items">
+            <div class="muted">Votre panier est vide.</div>
+          </div>
+          <div style="margin-top:12px" id="cart-totals"></div>
+        </div>
+
+        <aside>
+          <h4>Informations de commande</h4>
+          <form id="order-form">
+            <label class="micro muted">Nom complet</label>
+            <input required name="name" placeholder="Ex: Thomas Le Goff" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin:8px 0;background:transparent;color:inherit" />
+            <label class="micro muted">Email</label>
+            <input required name="email" placeholder="ex@exemple.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin:8px 0;background:transparent;color:inherit" />
+            <label class="micro muted">Organisation / Événement (optionnel)</label>
+            <input name="org" placeholder="Nom de la course" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin:8px 0;background:transparent;color:inherit" />
+            <label class="micro muted">Message</label>
+            <textarea name="message" rows="4" placeholder="détails/logistique" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin:8px 0;background:transparent;color:inherit"></textarea>
+            <button class="btn btn-primary" style="width:100%;margin-top:8px">Valider la commande</button>
+          </form>
+          <div id="order-success" style="display:none" class="success">
+            Merci — votre commande a été reçue. Nous vous contacterons à l'adresse indiquée.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT / SWOT -->
+    <section id="about" style="display:none">
+      <h3>Analyse SWOT</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Forces</h4>
+          <ul class="muted"><li>IA bateau spécialisée</li><li>Résistance eau salée</li><li>Live satellite</li><li>Landing plateforme</li></ul>
+        </div>
+        <div class="card">
+          <h4>Faiblesses</h4>
+          <ul class="muted"><li>Nouvelle marque</li><li>Coût R&D élevé</li></ul>
+        </div>
+        <div class="card">
+          <h4>Opportunités</h4>
+          <ul class="muted"><li>Demande pour la voile</li><li>Sponsors cherchant images inédites</li></ul>
+        </div>
+        <div class="card">
+          <h4>Menaces</h4>
+          <ul class="muted"><li>Incursion possible de DJI</li><li>Perte matérielle en météo extrême</li></ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <div>
+        <strong>Drone Offshore Pro</strong>
+        <div class="micro muted">© "Offshore Pro" — Conçu pour la captation en haute mer</div>
+      </div>
+      <div class="micro muted">Prototype budget: ~53 000 € · Contact: <a href="mailto:contact@offshorepro.example">contact@offshorepro.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Data produit initial
+    const PRODUCTS = [
+      {
+        id: 'offshore-pro-core',
+        title: 'Drone Offshore Pro — Pack Core',
+        price: 12990,
+        desc: 'Version complète: IA bateau prédictive, 4K stabilisé, transmission satellite (module de base).',
+        attrs: ['Résiste au vent 50 nœuds','Landing sur plateforme','Autonomie assistée']
+      },
+      {
+        id: 'offshore-pro-cam',
+        title: 'Module Caméra 8K Pro',
+        price: 4990,
+        desc: 'Caméra 8K stabilisée pour plans cinématiques avancés.',
+        attrs: ['8K','Stabilisation MAX','Mode Cinématique']
+      },
+      {
+        id: 'offshore-pro-sat',
+        title: 'Module Transmission Satellite',
+        price: 6990,
+        desc: 'Module de transmission satellite pour streaming live partout.',
+        attrs: ['Streaming live','Commutation Satellite/4G/5G']
+      }
+    ];
+
+    // Simple client-side cart
+    let CART = JSON.parse(localStorage.getItem('cart_offshore')||'{}');
+
+    function saveCart(){ localStorage.setItem('cart_offshore', JSON.stringify(CART)); }
+
+    function formatPrice(n){ return n.toLocaleString('fr-FR') + ' €'; }
+
+    // Routing
+    function showSection(id){
+      document.querySelectorAll('main section').forEach(s=> s.style.display='none');
+      const el = document.getElementById(id);
+      if(el) el.style.display='block';
+      window.location.hash = id;
+      renderCartBadge();
+    }
+
+    // Render products
+    function renderProducts(){
+      const grid = document.getElementById('products-grid'); grid.innerHTML='';
+      PRODUCTS.forEach(p=>{
+        const div = document.createElement('div'); div.className='product card';
+        div.innerHTML = `
+          <h4>${p.title}</h4>
+          <div class="p-attrs">${p.desc}</div>
+          <div class="price">${formatPrice(p.price)}</div>
+          <div class="micro muted">${p.attrs.join(' · ')}</div>
+          <div style="margin-top:10px"><button class="btn btn-primary" data-add="${p.id}">Ajouter au panier</button></div>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
+    // Cart UI
+    function renderCart(){
+      const container = document.getElementById('cart-items');
+      container.innerHTML='';
+      const ids = Object.keys(CART);
+      if(ids.length===0){ container.innerHTML = '<div class="muted">Votre panier est vide.</div>'; return }
+      let subtotal=0;
+      ids.forEach(id=>{
+        const qty = CART[id];
+        const p = PRODUCTS.find(x=>x.id===id);
+        if(!p) return;
+        subtotal += p.price * qty;
+        const line = document.createElement('div');
+        line.className='line';
+        line.innerHTML = `<div>${p.title} <div class="micro muted">x${qty}</div></div><div style="text-align:right">${formatPrice(p.price*qty)}<div style="margin-top:6px"><button data-dec="${id}" class="btn btn-ghost">-</button> <button data-inc="${id}" class="btn btn-ghost">+</button></div></div>`;
+        container.appendChild(line);
+      });
+      const totals = document.getElementById('cart-totals');
+      totals.innerHTML = `<div style="margin-top:12px"><div class="line"><div class="muted">Sous-total</div><div>${formatPrice(subtotal)}</div></div><div style="margin-top:8px"><strong>Total estimé</strong> <div class="muted micro">(Taxes et livraison calculées après contact)</div></div></div>`;
+    }
+
+    function addToCart(id, qty=1){ CART[id] = (CART[id]||0) + qty; saveCart(); renderCart(); renderCartBadge(); }
+    function changeQty(id, delta){ if(!CART[id]) return; CART[id]+=delta; if(CART[id]<=0) delete CART[id]; saveCart(); renderCart(); renderCartBadge(); }
+
+    function renderCartBadge(){
+      const total = Object.values(CART).reduce((a,b)=>a+b,0);
+      const btn = document.getElementById('open-products');
+      btn.innerText = total ? `Panier (${total})` : 'Acheter';
+    }
+
+    // Events
+    document.addEventListener('click', e=>{
+      if(e.target.matches('[data-add]')) addToCart(e.target.getAttribute('data-add'));
+      if(e.target.matches('[data-inc]')) changeQty(e.target.getAttribute('data-inc'), 1);
+      if(e.target.matches('[data-dec]')) changeQty(e.target.getAttribute('data-dec'), -1);
+      if(e.target.id==='cta-buy' || e.target.id==='open-products') showSection('products');
+    });
+
+    // Basic nav linking
+    document.querySelectorAll('[data-nav]').forEach(a=>{
+      a.addEventListener('click', ev=>{ ev.preventDefault(); const href = a.getAttribute('href').replace('#',''); showSection(href); })
+    });
+
+    // Order form
+    document.getElementById('order-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(this); const obj = Object.fromEntries(data.entries());
+      // Simuler envoi: ici on affiche la confirmation et on vide le panier
+      CART = {}; saveCart(); renderCart(); renderCartBadge();
+      document.getElementById('order-success').style.display='block';
+      setTimeout(()=>{ showSection('home'); document.getElementById('order-success').style.display='none' }, 3000);
+    });
+
+    // Hash routing initial
+    function init(){
+      renderProducts(); renderCart(); renderCartBadge();
+      const h = (location.hash||'#home').replace('#','');
+      if(['home','products','checkout','about'].includes(h)) showSection(h); else showSection('home');
+
+      // Handle increments/dec via event delegation in cart area
+      document.getElementById('cart-items').addEventListener('click', ev=>{});
+    }
+
+    init();
+  </script>
+</body>
+</html>

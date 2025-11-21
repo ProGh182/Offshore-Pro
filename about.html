@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>À propos — Drone Offshore Pro</title>
+  <meta name="description" content="À propos du drone Offshore Pro : technologie, caractéristiques, IA maritime, résistance météo, et vision du projet." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#00b4d8; --accent-2:#00f5a0; --muted:#94a3b8;
+      --glass:rgba(0,0,0,0.35);
+      --radius:16px;
+    }
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Roboto;
+      background:var(--bg);
+      color:#eef5ff;
+    }
+    img{max-width:100%;border-radius:var(--radius)}
+    a{text-decoration:none;color:var(--accent)}
+    .container{max-width:1000px;margin:0 auto;padding:28px}
+
+    /* HEADER */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);
+      padding:14px 0;
+    }
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:700;font-size:18px}
+    .backbtn{padding:8px 12px;background:var(--glass);border-radius:10px;color:#fff}
+
+    /* HERO */
+    .hero{
+      height:60vh;
+      background:url('drone.webp') center/cover no-repeat;
+      display:flex;align-items:center;
+      padding:40px;
+      position:relative;
+    }
+    .hero-overlay{
+      background:rgba(0,0,0,0.55);
+      backdrop-filter:blur(4px);
+      padding:24px;
+      border-radius:var(--radius);
+      max-width:600px;
+    }
+    .hero h1{margin:0;font-size:36px}
+    .lead{color:var(--muted);margin-top:12px;font-size:18px}
+
+    /* SECTIONS */
+    section{padding:48px 0}
+    h2{margin-bottom:12px}
+
+    .card{
+      background:rgba(255,255,255,0.03);
+      padding:20px;border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(0,0,0,0.4);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+    ul{margin:0;padding-left:18px;color:var(--muted)}
+
+    /* BUTTON */
+    .btn{
+      padding:12px 18px;border-radius:12px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#042;font-weight:700;border:0;cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="backbtn">← Retour</a>
+      <div class="brand">Drone Offshore Pro</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-overlay">
+      <h1>En savoir plus</h1>
+      <p class="lead">Découvrez la vision, la technologie et les fondations du premier drone dédié à la captation en haute mer.</p>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- Présentation -->
+    <section>
+      <h2>Notre mission</h2>
+      <p>Offshore Pro a été conçu pour répondre à un besoin unique : filmer et analyser des courses au large dans des conditions où les drones classiques sont inutilisables. Vent puissant, embruns salés, distances immenses, mouvements imprévisibles des bateaux — tout cela exige un drone spécialisé, robuste et intelligent.</p>
+    </section>
+
+    <!-- Caractéristiques clés -->
+    <section>
+      <h2>Caractéristiques clés</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🛰 Transmission Satellite</h3>
+          <p>Streaming live global via satellite + commutation automatique 4G/5G.</p>
+        </div>
+        <div class="card">
+          <h3>🌊 Résistance Mer & Vent</h3>
+          <p>Coque anti-sel, moteurs marinisés, stabilité jusqu'à 50 nœuds.</p>
+        </div>
+        <div class="card">
+          <h3>🤖 IA bateau dédiée</h3>
+          <p>Suivi prédictif de trajectoire, analyse du planning et évitement dynamique.</p>
+        </div>
+        <div class="card">
+          <h3>⚓ Landing sur plateforme</h3>
+          <p>Atterrissage automatique sur plateforme flottante avec correction dynamique.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SWOT -->
+    <section>
+      <h2>Analyse SWOT</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Forces</h3>
+          <ul>
+            <li>IA maritime avancée</li>
+            <li>Étanchéité et résistance au sel</li>
+            <li>Transmission satellite</li>
+            <li>Landing automatisé</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Faiblesses</h3>
+          <ul>
+            <li>Coût de développement élevé</li>
+            <li>Nouvelle marque non encore implantée</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Opportunités</h3>
+          <ul>
+            <li>Marché croissant des contenus voile</li>
+            <li>Demande des chaînes TV et sponsors</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Menaces</h3>
+          <ul>
+            <li>Concurrence potentielle des grands constructeurs</li>
+            <li>Risques liés aux conditions extrêmes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="text-align:center">
+      <h2>Prêt à configurer votre modèle ?</h2>
+      <a href="index.html#products"><button class="btn">Voir les produits</button></a>
+    </section>
+
+  </main>
+</body>
+</html>
